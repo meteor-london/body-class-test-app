@@ -2,11 +2,14 @@ body {
   font-family: futura, sans-serif;
 }
 
-.dyanmicSelector(10);
+// generate the selectors for .counter-1
+.countTo(counter-, 10);
 
-.dyanmicSelector(@n, @i: 1) when (@i =< @n) {
-  .counter-@{i} {
+// looping in less. Never do this.
+.countTo(@prefix, @n, @i: 1) when (@i =< @n) {
+  .@{prefix}@{i} {
     background: rgba(0,0,0, (@i / @n));
   }
-  .dyanmicSelector(@n, (@i + 1));
+
+  .countTo(@prefix, @n, (@i + 1));
 }
