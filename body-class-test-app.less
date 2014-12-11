@@ -1,0 +1,12 @@
+body {
+  font-family: futura, sans-serif;
+}
+
+.dyanmicSelector(10);
+
+.dyanmicSelector(@n, @i: 1) when (@i =< @n) {
+  .counter-@{i} {
+    background: rgba(0,0,0, (@i / @n));
+  }
+  .dyanmicSelector(@n, (@i + 1));
+}
